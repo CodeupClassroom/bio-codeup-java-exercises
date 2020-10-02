@@ -7,7 +7,7 @@ public class StringsLec {
         message = message + " World!";
         System.out.println(message); // prints "Hello, World!"
 
-        String dbEmail = "fer@codeup.com";
+        String dbEmail = " fer@codeup.com ".trim();
         String email = "Fer@Codeup.Com".toLowerCase();
         String studentEmail = "fergmail.com";
 
@@ -39,6 +39,12 @@ public class StringsLec {
 
         System.out.println("first index = " + email.indexOf("o"));
         System.out.println("last index = " + email.lastIndexOf("o"));
+
+        System.out.println("studentEmail.length() = " + studentEmail.length());
+        email = email.replace(".com", ".org");
+        System.out.println("org email = " + email);
+
+        System.out.println("email.substring(0,3) = " + email.substring(0, 3));
 
     }
 
