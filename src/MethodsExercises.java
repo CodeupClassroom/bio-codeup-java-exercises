@@ -85,14 +85,17 @@ public class MethodsExercises {
     }
 
     public static void rollDice(Scanner scan){
+        int counter = 0;
+
         while(true){
+            counter++;
             System.out.println("Roll Dice method");
             System.out.println("Number of sides: ");
             short sides = Short.parseShort(scan.nextLine());
             randomize(sides);
             System.out.println("Do you want to continue? y/n");
             if (scan.nextLine().equalsIgnoreCase("n")) {
-                System.out.println("Ok, bye");
+                System.out.println("Ok, bye, you played " + counter + " times");
                 break;
             }
         }
