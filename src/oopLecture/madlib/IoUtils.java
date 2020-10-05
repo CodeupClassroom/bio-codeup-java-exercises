@@ -2,6 +2,9 @@ package oopLecture.madlib;
 
 import java.util.Scanner;
 
+/**
+ * A class that offers methods to handle user IO.
+ */
 public class IoUtils {
 
     private static Scanner sc;
@@ -14,6 +17,7 @@ public class IoUtils {
         return sc;
     }
 
+    // if passed string is null, set to default
     public static String nullCoalesceStr(String str, String defaultStr) {
         return (str == null) ? defaultStr : str;
     }

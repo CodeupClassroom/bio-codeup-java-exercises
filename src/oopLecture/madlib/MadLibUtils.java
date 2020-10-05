@@ -1,6 +1,9 @@
 package oopLecture.madlib;
 
-class MadLibUtils {
+/**
+ * Class holding useful methods to handle user input for this specific program.
+ */
+public class MadLibUtils {
 
     private static String getSentence(String prompt) {
         IoUtils.output(IoUtils.nullCoalesceStr(prompt, "Please enter a sentence for the Mad Lib..."));
@@ -17,7 +20,7 @@ class MadLibUtils {
         return IoUtils.getScanner().nextLine();
     }
 
-    static MadLib createMadLib(String senPrompt, String wordType1Prompt, String wordType2Prompt, String wordType3Prompt) {
+    public static MadLib createMadLib(String senPrompt, String wordType1Prompt, String wordType2Prompt, String wordType3Prompt) {
         String sentence = getSentence(senPrompt);
         String wordType1 = getWordType(wordType1Prompt);
         String wordType2 = getWordType(wordType2Prompt);
@@ -25,7 +28,7 @@ class MadLibUtils {
         return new MadLib(sentence, wordType1, wordType2, wordType3);
     }
 
-    static MadLibAnswer fillInMadLib(MadLib ml) {
+    public static MadLibAnswer fillInMadLib(MadLib ml) {
         String word1 = getWord(null, ml.getWordType1());
         String word2 = getWord(null, ml.getWordType2());
         String word3 = getWord(null, ml.getWordType3());

@@ -1,5 +1,8 @@
 package oopLecture.madlib;
 
+/**
+ * Class that represents the answers from a user to a madlib.
+ */
 public class MadLibAnswer {
 
     private String word1;

@@ -1,5 +1,8 @@
 package oopLecture.madlib;
 
+/**
+ * Primary class that represents the entire program
+ */
 public class MadLibGame {
 
     private MadLibAnswer madlibAnswer;
@@ -46,6 +49,7 @@ public class MadLibGame {
         madLibGame.outputClosingMsg();
     }
 
+    // entry point of application
     public static void main(String[] args) {
         MadLibGame.run();
     }
