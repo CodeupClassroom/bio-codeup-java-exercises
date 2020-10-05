@@ -6,10 +6,28 @@ public class OopLecture {
 
         // ======================== slide 3 (classes and objects)
 
-//            Person rick1 = new Person();
+//            Person person1 = new Person();
+//            Person person2 = new Person();
+
+//            person1.firstName = "Bob";
+//            person2.firstName = "Bob";
+
+
+//            System.out.println(rick1.firstName);
+//            System.out.println(cindy.firstName);
+
+//            System.out.println(rick1);
+//            System.out.println(cindy);
+
 //            rick1.firstName = "Rick";
 //            rick1.lastName = "Smith";
+
 //            System.out.println(rick1.firstName);
+
+//            rick1.firstName = "Ricky";
+
+//            System.out.println(rick1.firstName);
+
 //            System.out.println(rick1.lastName);
 //
 //
@@ -39,6 +57,11 @@ public class OopLecture {
 //            rick.firstName = "Rick";
 //            rick.lastName = "Sanchez";
 //            System.out.println(rick.sayHello());
+//
+//            Person justin = new Person();
+//            justin.firstName = "Justin";
+//            justin.lastName = "Reich";
+//            System.out.println(justin.sayHello());
 
         // -- Dog Method Example --
 
@@ -48,7 +71,7 @@ public class OopLecture {
 //            d1.canBreed = false;
 //            d1.name = "Tater";
 //
-//            d1.callForDog("Sparky");
+//            d1.callForDog("Tater");
 
 
         // ======================== slide 5 (class fields)

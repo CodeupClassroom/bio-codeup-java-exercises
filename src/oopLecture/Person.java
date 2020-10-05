@@ -3,20 +3,20 @@ package oopLecture;
 public class Person {
 
         // SLIDE 3
-//        public String firstName;
+//        public String firstName = "Unknown";
 //        public String lastName;
-//        private String password;
+//        public int age;
 
         // SLIDE 4
 
-//        // instance variables
-//        public String firstName;
-//        public String lastName;
-//
-//        // instance method
-//        public String sayHello() {
-//                return lastName + ", " + firstName + " says hi!";
-//        }
+        // instance variables
+        public String firstName;
+        public String lastName;
+
+        // instance method
+        public String sayHello() {
+                return lastName + ", " + firstName + " says hi!";
+        }
 
 
         // SLIDE 7
@@ -39,5 +39,6 @@ public class Person {
 //                 DONT DO THIS, it will not compile
 //                 System.out.println(Person.name);
 //        }
+
 
 }
