@@ -9,14 +9,14 @@ public class Person {
 
         // SLIDE 4
 
-        // instance variables
-        public String firstName;
-        public String lastName;
-
-        // instance method
-        public String sayHello() {
-                return lastName + ", " + firstName + " says hi!";
-        }
+//        // instance variables
+//        public String firstName;
+//        public String lastName;
+//
+//        // instance method
+//        public String sayHello() {
+//                return lastName + ", " + firstName + " says hi!";
+//        }
 
 
         // SLIDE 7

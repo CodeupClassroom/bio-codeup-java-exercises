@@ -1,9 +1,17 @@
 public class DishTest {
     public static void main(String[] args) {
-        Dish d = new Dish();
-        d.costInCents = 4500;
-        d.nameOfDish = "Four Horsemen Burger";
-        d.wouldRecommend = false;
-        d.printSummary();
+        Dish dish = new Dish();
+        dish.costInCents = 4500;
+        dish.nameOfDish = "Four Horsemen Burger";
+        dish.wouldRecommend = false;
+        dish.printSummary();
+
+        System.out.println("=============");
+
+        DishTools.analyzeDishCost(dish);
+        DishTools.shoutDishName(dish);
+        DishTools.flipRecommendation(dish);
+        dish.printSummary();
+
     }
 }

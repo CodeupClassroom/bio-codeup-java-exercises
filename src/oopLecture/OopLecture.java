@@ -95,8 +95,9 @@ public class OopLecture {
 //            System.out.println(Person.worldPopulation);
 //
 //            // this also works, but is usually not a good idea
-//            System.out.println(theBestDrummerAlive.worldPopulation); // 7500000001
+//            System.out.println(Person.worldPopulation); // 7500000001
 //            System.out.println(theBestDrummerAlive.name);
+//        System.out.println(Person.name);
 
 
 //        Person person = new Person();
