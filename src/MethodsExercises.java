@@ -19,15 +19,17 @@ public class MethodsExercises {
 //        System.out.println("getInteger(1,10) = " + getInteger(1, 10));
 //        System.out.println("getInteger(5, 8) = " + getInteger(5, 8));
 
-        while(true){
-            System.out.println("factorial() = " + factorial());
-            System.out.println("Do you want to continue? y/n");
-            String answer = scan.nextLine();
-            if(answer.equalsIgnoreCase("n")){
-                System.out.println("Ok, bye");
-                break;
-            }
-        }
+//        while(true){
+//            System.out.println("factorial() = " + factorial());
+//            System.out.println("Do you want to continue? y/n");
+//            String answer = scan.nextLine();
+//            if(answer.equalsIgnoreCase("n")){
+//                System.out.println("Ok, bye");
+//                break;
+//            }
+//        }
+
+        rollDice(scan);
 
     }
 
@@ -75,6 +77,25 @@ public class MethodsExercises {
         }
 
         return output;
+    }
+
+    public static void randomize(short sides){
+        System.out.println( (int) Math.floor(Math.random() * sides) );
+        System.out.println( (int) Math.floor(Math.random() * sides) );
+    }
+
+    public static void rollDice(Scanner scan){
+        while(true){
+            System.out.println("Roll Dice method");
+            System.out.println("Number of sides: ");
+            short sides = Short.parseShort(scan.nextLine());
+            randomize(sides);
+            System.out.println("Do you want to continue? y/n");
+            if (scan.nextLine().equalsIgnoreCase("n")) {
+                System.out.println("Ok, bye");
+                break;
+            }
+        }
     }
 
 }
