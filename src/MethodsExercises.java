@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MethodsExercises {
     public static void main(String[] args) {
 
@@ -11,6 +13,9 @@ public class MethodsExercises {
         System.out.println("(2 == division(10, 5)) = " + (2 == division(10, 5)));
 
         System.out.println("(1 == modulus(5, 2)) = " + (1 == modulus(5, 2)));
+
+        System.out.println("getInteger(1,10) = " + getInteger(1, 10));
+        System.out.println("getInteger(5, 8) = " + getInteger(5, 8));
 
     }
 
@@ -34,6 +39,20 @@ public class MethodsExercises {
         return arg1 % arg2;
     }
 
+    public static int getInteger(int min, int max){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Give me a number between " +  min + " and " + max);
+        int userInput = Integer.parseInt(scan.nextLine());
 
+        if(userInput < min){
+            System.out.println("This number is lower than " + min);
+            return getInteger(min, max);
+        } else if ( userInput > max) {
+            System.out.println("This number is bigger than " + max);
+            return getInteger(min, max);
+        }
+
+        return userInput;
+    }
 
 }
