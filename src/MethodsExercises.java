@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class MethodsExercises {
     public static void main(String[] args) {
 
+        Scanner scan = new Scanner(System.in);
+
         System.out.println("(3 == sum(1,2)) = " + (3 == sum(1,2)));
         System.out.println("(3 == sum(1,4)) = " + (3 == sum(1,4)));
 
@@ -14,8 +16,18 @@ public class MethodsExercises {
 
         System.out.println("(1 == modulus(5, 2)) = " + (1 == modulus(5, 2)));
 
-        System.out.println("getInteger(1,10) = " + getInteger(1, 10));
-        System.out.println("getInteger(5, 8) = " + getInteger(5, 8));
+//        System.out.println("getInteger(1,10) = " + getInteger(1, 10));
+//        System.out.println("getInteger(5, 8) = " + getInteger(5, 8));
+
+        while(true){
+            System.out.println("factorial() = " + factorial());
+            System.out.println("Do you want to continue? y/n");
+            String answer = scan.nextLine();
+            if(answer.equalsIgnoreCase("n")){
+                System.out.println("Ok, bye");
+                break;
+            }
+        }
 
     }
 
@@ -53,6 +65,16 @@ public class MethodsExercises {
         }
 
         return userInput;
+    }
+
+    public static long factorial(){
+        int userInput = getInteger(1, 10);
+        long output = 1;
+        for (int counter = 1; counter <= userInput; counter++){
+            output *= counter;
+        }
+
+        return output;
     }
 
 }
