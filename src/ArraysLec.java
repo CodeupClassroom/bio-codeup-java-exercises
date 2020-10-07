@@ -8,6 +8,10 @@ public class ArraysLec {
         double[] prices = new double[3];
         int[] numbers = new int[8];
         int[] otherNumbers = new int[8];
+        Person[] persons = new Person[2];
+
+        persons[0] = new Person("Fer");
+        persons[1] = new Person("Nando");
 
         prices[0] = Double.parseDouble("1.0");
         prices[1] = 2.0 * 2;
@@ -93,6 +97,11 @@ public class ArraysLec {
 //        }
 //
 //        System.out.println("+---+---+---+");
+
+        for (Person person: persons) {
+            person.sayHello();
+            System.out.println("Hi " + person.getName() + " welcome to my world");
+        }
 
     }
 }
