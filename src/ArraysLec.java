@@ -53,5 +53,46 @@ public class ArraysLec {
         copyOfNames[3] = "Justin";
         System.out.println("Arrays.toString(copyOfNames) = " + Arrays.toString(copyOfNames));
 
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+
+// access the first element in the second row
+        System.out.println(matrix[1][0]); // 4
+// the last element in the first row
+        System.out.println(matrix[0][2]); // 3
+// the first element in the last row
+        System.out.println(matrix[2][0]); // 7
+
+        for (int[] row : matrix) {
+            System.out.println("+---+---+---+");
+
+            System.out.print("| ");
+
+            for (int cell : row) {
+                System.out.print(cell + " | ");
+            }
+
+            System.out.println();
+        }
+//
+//        System.out.println("matrix.length = " + matrix.length);
+
+//        for (int x= 0 ; x < matrix.length ; x++) {
+//            System.out.println("+---+---+---+");
+//
+//            System.out.print("| ");
+//
+//            for (int y= 0 ; y < matrix.length ; y++) {
+//                System.out.print(matrix[x][y] + " | ");
+//            }
+//
+//            System.out.println();
+//        }
+//
+//        System.out.println("+---+---+---+");
+
     }
 }
