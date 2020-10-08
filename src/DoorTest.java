@@ -24,6 +24,13 @@ public class DoorTest {
 //        backDoor.close();
 //        System.out.println("backDoor.isOpen() = " + backDoor.isOpen());
 //        System.out.println("backDoor.isLocked() = " + backDoor.isLocked());
+        Door[] doors = new Door[3];
+        doors[0] = new LockingDoor("front");
+        doors[1] = new LockingDoor("back");
+        doors[2] = new SlidingDoor("front glass");
 
+        for (Door door: doors) {
+            door.open();
+        }
     }
 }
