@@ -10,8 +10,8 @@ public class ShapesTest {
         group[1] = new Square(5);
 
         for (Rectangle rect : group) {
-            System.out.println("rect.getArea() = " + rect.getArea());
-            System.out.println("rect.getPerimeter() = " + rect.getPerimeter());
+                System.out.println("rect.getArea() = " + rect.getArea());
+                System.out.println("rect.getPerimeter() = " + rect.getPerimeter());
         }
 
     }
