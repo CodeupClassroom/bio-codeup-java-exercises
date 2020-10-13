@@ -44,10 +44,16 @@ public class CollectionsLec {
 
     public static void hashMapsPractice(){
         HashMap<String, String> usernames = new HashMap<>();
+        HashMap<String, Post> postsMap = new HashMap<>();
+
         usernames.put("fmendozaro", "Fernando M R");
         usernames.putIfAbsent("fmendozaro", "Fernando Mendoza R");
         usernames.put("zgulde", "Zach Gulde");
         usernames.put("zguldes", "Zach Gulde");
+
+        postsMap.putIfAbsent("20201013-546589754", new Post("Titles"));
+        postsMap.putIfAbsent("20201013-546589755", new Post("Titles 2"));
+        postsMap.putIfAbsent("20201013-546589756", new Post("Titles 3"));
 
         System.out.println("usernames.get(\"fmendozaro\") = " + usernames.get("fmendozaro"));
         System.out.println("usernames.get(\"ryanorsinger\") = " + usernames.getOrDefault("ryanorsinger", "N/A"));
@@ -64,10 +70,26 @@ public class CollectionsLec {
         System.out.println("usernames.containsValue(\"Fernando M R\") = " + usernames.containsValue("Fernando M R"));
         System.out.println("usernames.containsValue(\"Fernando M Rs\") = " + usernames.containsValue("Fernando M Rs"));
 
+        //postsMap.clear();
 
+        postsMap.remove("20201013-5465897557"); // this returns null
+        postsMap.remove("20201013-546589755"); // this works
 
+        postsMap.replace("20201013-546589756", new Post("Torvalds"));
 
+        if(!postsMap.isEmpty()){
+            System.out.println("hashmap keySet");
+            for (String key : postsMap.keySet()) {
+                //System.out.println("key = " + key);
+                System.out.println("key = " + key);
+                postsMap.get(key).printTitleAndAuthor();
+            }
 
+            System.out.println("hashmap values");
+            for (Post post : postsMap.values()) {
+                post.printTitleAndAuthor();
+            }
+        }
 
     }
 
