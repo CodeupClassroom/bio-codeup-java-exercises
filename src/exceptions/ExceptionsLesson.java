@@ -15,25 +15,25 @@ public class ExceptionsLesson {
         second();
         System.out.println("Finish First");
     }
-    static void second() throws BIOException {
+    static void second() {
         System.out.println("Start Second");
-//        try {
+        try {
             dangerZone();
-//        } catch (BIOException bex) {
-//            bex.printStackTrace();
-//        }
+        } catch (BIOException bex) {
+            bex.printStackTrace();
+        }
         System.out.println("Finish Second");
     }
     static void dangerZone() throws BIOException{
         System.out.println("Start dangerZone");
-
-        // dangerous code goes here
-//        try {
-        if (Math.floor(Math.random()*3) == 0) {
-            throw new BIOException();
-
+        try {
+            // dangerous code goes here
+//            hello.length();
+        } catch (NullPointerException nex) {
+            nex.printStackTrace();
+        } finally {
+            System.out.println("Finish dangerZone");
         }
-        System.out.println("Finish dangerZone");
     }
 
     static String getColorHexValue(String colorName) {
