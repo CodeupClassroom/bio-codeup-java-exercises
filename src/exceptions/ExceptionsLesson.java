@@ -15,41 +15,23 @@ public class ExceptionsLesson {
         second();
         System.out.println("Finish First");
     }
-    static void second() {
+    static void second() throws BIOException {
         System.out.println("Start Second");
-        dangerZone();
+//        try {
+            dangerZone();
+//        } catch (BIOException bex) {
+//            bex.printStackTrace();
+//        }
         System.out.println("Finish Second");
     }
-    static void dangerZone() {
+    static void dangerZone() throws BIOException{
         System.out.println("Start dangerZone");
 
         // dangerous code goes here
-        try {
-            // ArrayIndexOutOfBoundsException
-//            System.out.println("Tenth color is: " + colors[9]);
-            // NumberFormatException
-//            int numHello = new Integer("hello");
-            Input input = new Input();
-            int nameInt = input.getInt("Please enter you name:");
-            System.out.println("nameInt = " + nameInt);
-            // ArithmeticException
-            int numerator = 1, denominator = 0;
-            int num = numerator / denominator;
-            // NullPointerException
-            if (hello.equals("hello"))
-                System.out.println("Hello!");
-            // IllegalArgumentException
-            for (String color : colors)
-                System.out.printf("Hex value of %s is %s.\n", color, getColorHexValue(color));
-        } catch (ArrayIndexOutOfBoundsException aibex) {
-            System.out.println("ArrayIndexOutOfBoundsException");
-            System.out.println(aibex.getMessage());
-        } catch (NumberFormatException nfex) {
-            System.out.println("Number Format Exception");
-            System.out.println(nfex.getMessage());
-//        } catch (Exception ex) {
-//            System.out.println(ex.getMessage());
-//            ex.printStackTrace();
+//        try {
+        if (Math.floor(Math.random()*3) == 0) {
+            throw new BIOException();
+
         }
         System.out.println("Finish dangerZone");
     }
@@ -66,9 +48,9 @@ public class ExceptionsLesson {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Hello World!");
-//        first();
-        if (Math.floor(Math.random()*3) == 0)
-            throw new Exception("A problem happened");
+        first();
+//        if (Math.floor(Math.random()*3) == 0)
+//            throw new Exception("A problem happened");
         System.out.println("Program Finished Successfully. Yay!!");
     }
 
