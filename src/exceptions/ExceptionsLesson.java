@@ -26,14 +26,16 @@ public class ExceptionsLesson {
     }
     static void dangerZone() throws BIOException{
         System.out.println("Start dangerZone");
-        try {
+//        try {
             // dangerous code goes here
-//            hello.length();
-        } catch (NullPointerException nex) {
-            nex.printStackTrace();
-        } finally {
+//            Scanner sc = new Scanner(System.in);
+//            int i = sc.nextInt();
+        int i = Integer.valueOf("Daniel");
+//        } catch (Exception ex) {
+//            System.out.println(ex);
+//        } finally {
             System.out.println("Finish dangerZone");
-        }
+//        }
     }
 
     static String getColorHexValue(String colorName) {
