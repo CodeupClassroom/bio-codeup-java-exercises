@@ -67,20 +67,38 @@ public class Input {
         return num;
     }
 
-    public double getDouble(double min,double max){
+    public double getDouble(double min,double max) {
+        return getDouble(min,max,"Please enter a number between "+min+" and "+max);
+    }
+
+    public double getDouble(double min,double max,String prompt){
         while (true) {
-            System.out.printf("Please enter a number between %f and %f", min, max);
+            System.out.printf(prompt);
 
             String input = scanner.nextLine();
-            double num = Double.parseDouble(input);
+            double num;
+            try {
+                num = Double.parseDouble(input);
+            } catch (NumberFormatException nfex) {
+                System.err.println("You must enter a number.");
+                return getDouble(min,max,prompt);
+            }
             if (num >= min && num <= max)
                 return num;
         }
     }
 
     public double getDouble(){
-        System.out.println("Please enter a number");
+        return getDouble("Please enter a number");
+    }
+    public double getDouble(String prompt){
+        System.out.println(prompt);
         String input = scanner.nextLine();
-        return Double.parseDouble(input);
+        try {
+            return Double.parseDouble(input);
+        } catch (NumberFormatException nfex) {
+            System.err.println("You must enter a number.");
+            return getDouble(prompt);
+        }
     }
 }
