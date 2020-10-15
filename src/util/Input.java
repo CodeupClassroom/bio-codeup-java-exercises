@@ -58,6 +58,7 @@ public class Input {
 
         int num;
         try {
+//            num = Integer.valueOf(input);
             num = Integer.parseInt(input);
         } catch (NumberFormatException nfex) {
             System.err.println("You must enter an integer.");
