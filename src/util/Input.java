@@ -27,7 +27,6 @@ public class Input {
                 input.trim().toLowerCase().equals("yes"));
     }
 
-
     public int getInt(int min,int max){
 
         return getInt(min,max,"Please enter an integer between "+min+" and "+max);
@@ -36,11 +35,17 @@ public class Input {
     public int getInt(int min,int max,String prompt){
         while (true) {
             System.out.println(prompt);
-
-            String input = scanner.nextLine();
-            int num = Integer.parseInt(input);
-            if (num >= min && num <= max)
-                return num;
+            int num;
+            try {
+                String input = scanner.nextLine();
+                num = Integer.parseInt(input);
+//            int num = scanner.nextInt();
+            } catch (RuntimeException re) {
+                System.err.println("You must enter an integer.");
+                return getInt(min,max,prompt);
+            }
+                if (num >= min && num <= max)
+                    return num;
         }
     }
 
@@ -50,7 +55,14 @@ public class Input {
     public int getInt(String prompt){
         System.out.println(prompt);
         String input = scanner.nextLine();
-        int num = Integer.parseInt(input);
+
+        int num;
+        try {
+            num = Integer.parseInt(input);
+        } catch (NumberFormatException nfex) {
+            System.err.println("You must enter an integer.");
+            return getInt(prompt);
+        }
         return num;
     }
 
