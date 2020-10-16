@@ -36,6 +36,11 @@ public class FilesLecture {
             FileIO.deleteLine(dataFilePath, "bread");
             FileIO.printFileContents(dataFilePath);
 
+            //Empty the list
+            Files.write(dataFilePath, new ArrayList<>());
+            System.out.println("After empty");
+            FileIO.printFileContents(dataFilePath);
+
         } catch (IOException ex) {
             System.out.println("Cannot create the file.");
             ex.printStackTrace();
