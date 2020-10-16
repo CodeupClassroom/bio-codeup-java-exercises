@@ -29,24 +29,12 @@ public class FilesLecture {
             FileIO.printFileContents(dataFilePath);
 
             //Replace a line in the file.
-            List<String> fileContents = Files.readAllLines(dataFilePath);
-            List<String> modifiedList = new ArrayList<>();
-            for (String item: fileContents) {
-                if(item.equals("milk")) {
-                    //Add my modified item.
-                    modifiedList.add("whole milk");
-                } else {
-                    //Add the existing because it isn't what we want to replace.
-                    modifiedList.add(item);
-                }
-            }
-            Files.write(dataFilePath, modifiedList);
-
+            FileIO.updateLine(dataFilePath, "milk", "whole milk");
             FileIO.printFileContents(dataFilePath);
 
             //Remove a line from the file.
-            fileContents = Files.readAllLines(dataFilePath);
-            modifiedList = new ArrayList<>();
+            List<String> fileContents = Files.readAllLines(dataFilePath);
+            List<String> modifiedList = new ArrayList<>();
             for (String item: fileContents) {
                 //I want to remove the bread from the list.
                 if(!item.equals("bread")) {

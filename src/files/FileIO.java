@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FileIO {
@@ -30,5 +31,21 @@ public class FileIO {
         for (int i = 0; i < fileContents.size(); i++) {
             System.out.printf("%d: %s\n", i + 1, fileContents.get(i));
         }
+    }
+
+    public static void updateLine(Path filePath, String oldValue, String newValue) throws IOException {
+        //Replace a line in the file.
+        List<String> fileContents = Files.readAllLines(filePath);
+        List<String> modifiedList = new ArrayList<>();
+        for (String item: fileContents) {
+            if(item.equals(oldValue)) {
+                //Add my modified item.
+                modifiedList.add(newValue);
+            } else {
+                //Add the existing because it isn't what we want to replace.
+                modifiedList.add(item);
+            }
+        }
+        Files.write(filePath, modifiedList);
     }
 }
