@@ -33,15 +33,7 @@ public class FilesLecture {
             FileIO.printFileContents(dataFilePath);
 
             //Remove a line from the file.
-            List<String> fileContents = Files.readAllLines(dataFilePath);
-            List<String> modifiedList = new ArrayList<>();
-            for (String item: fileContents) {
-                //I want to remove the bread from the list.
-                if(!item.equals("bread")) {
-                    modifiedList.add(item);
-                }
-            }
-            Files.write(dataFilePath, modifiedList);
+            FileIO.deleteLine(dataFilePath, "bread");
             FileIO.printFileContents(dataFilePath);
 
         } catch (IOException ex) {

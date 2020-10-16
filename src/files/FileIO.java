@@ -48,4 +48,16 @@ public class FileIO {
         }
         Files.write(filePath, modifiedList);
     }
+
+    public static void deleteLine(Path filePath, String line) throws IOException {
+        List<String> fileContents = Files.readAllLines(filePath);
+        List<String> modifiedList = new ArrayList<>();
+        for (String item: fileContents) {
+            //I want to remove the bread from the list.
+            if(!item.equals(line)) {
+                modifiedList.add(item);
+            }
+        }
+        Files.write(filePath, modifiedList);
+    }
 }
