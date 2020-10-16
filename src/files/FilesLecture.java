@@ -14,18 +14,9 @@ public class FilesLecture {
         String directoryName = "data";
         String fileName = "grocery_list.txt";
 
-        Path directoryPath = Paths.get(directoryName);
-        Path dataFilePath = Paths.get(directoryName, fileName);
-
         //We have to create a directory first before we create before we create the file.
         try {
-            if (Files.notExists(directoryPath)) {
-                Files.createDirectories(directoryPath);
-            }
-
-            if (!Files.exists(dataFilePath)) {
-                Files.createFile(dataFilePath);
-            }
+            Path dataFilePath = FileIO.createDirectoryAndFile(directoryName, fileName);
 
             //Let's write our grocery list ot the file.
             List<String> groceryList = Arrays.asList("milk", "eggs", "bacon");
