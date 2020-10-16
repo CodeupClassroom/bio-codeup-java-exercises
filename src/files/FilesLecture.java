@@ -22,21 +22,14 @@ public class FilesLecture {
             List<String> groceryList = Arrays.asList("milk", "eggs", "bacon");
             Files.write(dataFilePath, groceryList);
 
-            List<String> fileContents = Files.readAllLines(dataFilePath);
-            for (int i = 0; i < fileContents.size(); i++) {
-                System.out.printf("%d: %s\n", i + 1, fileContents.get(i));
-            }
+            FileIO.printFileContents(dataFilePath);
 
             //Append to the file.
             Files.write(dataFilePath, Arrays.asList("cereal", "bread"), StandardOpenOption.APPEND);
-            fileContents = Files.readAllLines(dataFilePath);
-            System.out.println();
-            for (int i = 0; i < fileContents.size(); i++) {
-                System.out.printf("%d: %s\n", i + 1, fileContents.get(i));
-            }
+            FileIO.printFileContents(dataFilePath);
 
             //Replace a line in the file.
-            fileContents = Files.readAllLines(dataFilePath);
+            List<String> fileContents = Files.readAllLines(dataFilePath);
             List<String> modifiedList = new ArrayList<>();
             for (String item: fileContents) {
                 if(item.equals("milk")) {
@@ -49,11 +42,7 @@ public class FilesLecture {
             }
             Files.write(dataFilePath, modifiedList);
 
-            fileContents = Files.readAllLines(dataFilePath);
-            System.out.println();
-            for (int i = 0; i < fileContents.size(); i++) {
-                System.out.printf("%d: %s\n", i + 1, fileContents.get(i));
-            }
+            FileIO.printFileContents(dataFilePath);
 
             //Remove a line from the file.
             fileContents = Files.readAllLines(dataFilePath);
@@ -65,11 +54,7 @@ public class FilesLecture {
                 }
             }
             Files.write(dataFilePath, modifiedList);
-            fileContents = Files.readAllLines(dataFilePath);
-            System.out.println();
-            for (int i = 0; i < fileContents.size(); i++) {
-                System.out.printf("%d: %s\n", i + 1, fileContents.get(i));
-            }
+            FileIO.printFileContents(dataFilePath);
 
         } catch (IOException ex) {
             System.out.println("Cannot create the file.");
